@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+    <style>
+      table, th, td {
+          font-family: arial, sans-serif;
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+          text-align: left;
+      }
+      tr:nth-child(even){
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Friends:</h1>
+
+
+
+
+     <table>
+       <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Created_at</th>
+       </tr>
+       {% for friend in all_friends: %}
+       <tr>
+         <td>{{ friend['name']}}</td>
+         <td>{{ friend['age'] }}</td>
+         <td>{{friend['created_at']}}</td>
+       </tr>
+       {% endfor %}
+     </table>
+
+     <!-- <form action='/edit' method='POST'>
+       <label for="first_name">Name:<input type="text" name="name" id="name"></label><br><br>
+       <label for="age">Age:<input type="text" name="age" id="age"></label><br><br>
+       <input type="submit" value="Edit">
+     </form> -->
+
+
+    <h1>Add a Friend</h1>
+
+    <form action="/friends" method="post">
+      <p><label for="name">Name:</label>
+      <input type="text" name="name" ></p>
+      <p><label for="age">Age:</label>
+      <input type="Int" name="age" ></p>
+
+      <input type="submit" name="" value="Submit">
+
+    </form>
+
+
+  </body>
+</html>
